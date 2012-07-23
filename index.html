@@ -1,8 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chaya</title>
+</head>
+<body>
+
+<label for="input">Message:</label>
+<input id="input" type="text"><input type="button" value="Send">
+
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://localhost');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
+    var socket = io.connect('http://localhost');
+    socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my:'data' });
+    });
 </script>
+
+</body>
+</html>
