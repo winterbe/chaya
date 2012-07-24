@@ -1,16 +1,21 @@
-var app = require('express').createServer()
-  , io = require('socket.io').listen(app);
+var app = require('express').createServer();
+var io = require('socket.io').listen(app);
 
-app.listen(5000);
+var port = process.env.PORT || 5000;
+app.listen(port);
 
 app.get('/', function (req, res) {
-  console.log('dispatching /');
-  res.sendfile(__dirname + '/index.html');
+    "use strict";
+
+    res.sendfile(__dirname + '/index.html');
 });
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
+    "use strict";
+
+    socket.on('ping', function (data) {
+        socket.emit('pong', { message:'Pong: ' + new Date() });
+    });
+
+
 });
