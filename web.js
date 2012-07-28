@@ -1,6 +1,15 @@
 var app = require('express').createServer();
 var io = require('socket.io').listen(app);
 
+if (process.env.PORT) {
+    console.log('heroku doesnt support websockets. setting up xhr-polling...');
+    io.configure(function () {
+        "use strict";
+        io.set("transports", ["xhr-polling"]);
+        io.set("polling duration", 10);
+    });
+}
+
 var port = process.env.PORT || 5000;
 app.listen(port);
 
