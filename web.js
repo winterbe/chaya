@@ -6,8 +6,17 @@ app.listen(port);
 
 app.get('/', function (req, res) {
     "use strict";
-
     res.sendfile(__dirname + '/index.html');
+});
+
+app.get('/chaya.css', function (req, res) {
+    "use strict";
+    res.sendfile(__dirname + '/chaya.css');
+});
+
+app.get('/chaya.js', function (req, res) {
+    "use strict";
+    res.sendfile(__dirname + '/chaya.js');
 });
 
 io.sockets.on('connection', function (socket) {
