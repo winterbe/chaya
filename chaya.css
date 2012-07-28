@@ -22,11 +22,15 @@ body {
 }
 
 #chat .content {
-
+    position: relative;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
 }
 
 #chat .actions {
-
+    position: fixed;
+    bottom: 60px;
 }
 
 #chat .actions input[type=text] {

@@ -23,7 +23,9 @@ io.sockets.on('connection', function (socket) {
     "use strict";
 
     socket.on('ping', function (data) {
-        socket.emit('pong', { message:'Pong: ' + new Date() });
+        var message = { message:data, time:new Date() };
+        socket.broadcast.emit('pong', message);
+        socket.emit('pong', message);
     });
 
 
