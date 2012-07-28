@@ -3,34 +3,39 @@ body {
     padding: 0;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 14px;
+    color: black;
 }
 
-.box {
-    border: 1px solid rgb(79, 79, 79);
-    border-radius: 15px;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    width: 928px;
-    height: 440px;
+#content {
+    margin: 10px;
 }
 
-#chat {
-    margin: 20px auto;
-    padding: 10px;
+#content .entry {
+    margin-bottom: 4px;
 }
 
-#chat .content {
-    height: 410px;
-    overflow: auto;
+#content .meta {
+    color: #a9a9a9;
+    font-size: 12px;
+    font-style: italic;
 }
 
-#chat .actions {
-
+#content .message {
+    color: black;
 }
 
-#chat .actions input[type=text] {
-    width: 500px;
+#south {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    background: #708090;
+}
+
+#south input {
+    width: 100%;
     line-height: 24px;
     border: 1px solid gray;
     border-radius: 4px;

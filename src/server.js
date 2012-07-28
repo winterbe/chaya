@@ -31,11 +31,20 @@ app.get('/chaya.js', function (req, res) {
 io.sockets.on('connection', function (socket) {
     "use strict";
 
-    socket.on('ping', function (data) {
+    var message = { message:'user connected', time:new Date() };
+    socket.emit('meta', message);
+    socket.broadcast.emit('meta', message);
+
+    socket.on('peek', function (data) {
         var message = { message:data, time:new Date() };
-        socket.broadcast.emit('pong', message);
-        socket.emit('pong', message);
+        socket.broadcast.emit('poke', message);
+        socket.emit('poke', message);
     });
 
+    socket.on('disconnect', function() {
+        var message = { message:'user disconnected', time:new Date() };
+        socket.emit('meta', message);
+        socket.broadcast.emit('meta', message);
+    });
 
 });

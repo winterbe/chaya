@@ -1,14 +1,25 @@
-$(function() {
+$(function () {
     "use strict";
 
     var socket = io.connect('/');
-    socket.on('pong', function (data) {
-        $('#chat .content').append($('<div>' + data.message + '</div>'));
+
+    socket.on('poke', function (data) {
+        $('#content').append($('<div class="entry message">' + data.message + '</div>'));
     });
-    $('input[type=button]').on('click', function () {
-        var message = $('input[type=text]').val();
-        if (message) {
-            socket.emit('ping', message);
-        }
+
+    socket.on('meta', function (data) {
+        $('#content').append($('<div class="entry meta">' + data.message + '</div>'));
     });
+
+    $('#south input')
+        .on('keyup', function (ev) {
+            if (ev.keyCode === 13) {
+                var message = $(this).val();
+                if (message) {
+                    socket.emit('peek', message);
+                    $(this).val('');
+                }
+            }
+        })
+        .focus();
 });
