@@ -6,6 +6,19 @@ body {
     color: black;
 }
 
+#nickname {
+    width: 200px;
+    margin: 50px auto;
+}
+
+#nickname input {
+    width: 100%;
+}
+
+#chat {
+    display: none;
+}
+
 #content {
     margin: 10px;
 }

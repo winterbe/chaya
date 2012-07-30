@@ -1,25 +1,41 @@
 $(function () {
     "use strict";
 
-    var socket = io.connect('/');
-
-    socket.on('poke', function (data) {
-        $('#content').append($('<div class="entry message">' + data.message + '</div>'));
-    });
-
-    socket.on('meta', function (data) {
-        $('#content').append($('<div class="entry meta">' + data.message + '</div>'));
-    });
-
-    $('#south input')
+    $('#nickname input')
+        .focus()
         .on('keyup', function (ev) {
             if (ev.keyCode === 13) {
-                var message = $(this).val();
-                if (message) {
-                    socket.emit('peek', message);
-                    $(this).val('');
+                var nickname = $(this).val();
+                if (nickname) {
+                    connect(nickname);
                 }
             }
-        })
-        .focus();
+        });
+
+    function connect(nickname) {
+        var socket = io.connect('/');
+
+        socket.on('poke', function (data) {
+            $('#content').append($('<div class="entry message">' + data.message + '</div>'));
+        });
+
+        socket.on('meta', function (data) {
+            $('#content').append($('<div class="entry meta">' + data.message + '</div>'));
+        });
+
+        $('#nickname').hide();
+        $('#chat').show();
+
+        $('#south input')
+            .focus()
+            .on('keyup', function (ev) {
+                if (ev.keyCode === 13) {
+                    var message = $(this).val();
+                    if (message) {
+                        socket.emit('peek', message);
+                        $(this).val('');
+                    }
+                }
+            });
+    }
 });
