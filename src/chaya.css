@@ -6,13 +6,20 @@ body {
     color: black;
 }
 
+input {
+    outline: none;
+}
+
 #nickname {
-    width: 200px;
-    margin: 50px auto;
+    width: 150px;
+    margin: 100px auto;
 }
 
 #nickname input {
-    width: 100%;
+    width: 150px;
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 20px;
 }
 
 #chat {
@@ -20,12 +27,12 @@ body {
 }
 
 #content {
-    margin: 10px;
+    margin: 10px 10px 70px 10px;
     font-size: 20px;
 }
 
 #content .entry {
-    margin-bottom: 4px;
+    margin-bottom: 1px;
 }
 
 #content .meta {
@@ -48,8 +55,9 @@ body {
 }
 
 #south input {
-    width: 100%;
-    line-height: 24px;
+    width: 600px;
     border: 1px solid gray;
-    border-radius: 4px;
+    padding: 8px;
+    border-radius: 20px;
+    margin: 0 20px;
 }

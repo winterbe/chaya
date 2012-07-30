@@ -12,6 +12,8 @@ $(function () {
             }
         });
 
+//    connect('test');
+
     function connect(nickname) {
         var socket = io.connect('/');
 
@@ -20,6 +22,7 @@ $(function () {
         socket.on('poke', function (data) {
             var msg = data.nickname + ': ' + data.message;
             $('#content').append($('<div class="entry message">' + msg + '</div>'));
+            $('html, body').prop('scrollTop', $(document).height());
         });
 
         socket.on('meta', function (data) {
