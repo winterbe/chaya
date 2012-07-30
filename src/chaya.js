@@ -15,8 +15,11 @@ $(function () {
     function connect(nickname) {
         var socket = io.connect('/');
 
+        socket.emit('whoami', nickname);
+
         socket.on('poke', function (data) {
-            $('#content').append($('<div class="entry message">' + data.message + '</div>'));
+            var msg = data.nickname + ': ' + data.message;
+            $('#content').append($('<div class="entry message">' + msg + '</div>'));
         });
 
         socket.on('meta', function (data) {

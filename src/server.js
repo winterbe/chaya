@@ -31,20 +31,28 @@ app.get('/chaya.js', function (req, res) {
 io.sockets.on('connection', function (socket) {
     "use strict";
 
-    var message = { message:'user connected', time:new Date() };
-    socket.emit('meta', message);
-    socket.broadcast.emit('meta', message);
+    socket.on('whoami', function(nickname) {
+        socket.set('nickname', nickname, function() {
+            var message = { message:nickname + ' connected', time:new Date() };
+            socket.emit('meta', message);
+            socket.broadcast.emit('meta', message);
+        });
+    });
 
     socket.on('peek', function (data) {
-        var message = { message:data, time:new Date() };
-        socket.broadcast.emit('poke', message);
-        socket.emit('poke', message);
+        socket.get('nickname', function(err, name) {
+            var message = { message:data, nickname:name, time:new Date() };
+            socket.broadcast.emit('poke', message);
+            socket.emit('poke', message);
+        });
     });
 
     socket.on('disconnect', function() {
-        var message = { message:'user disconnected', time:new Date() };
-        socket.emit('meta', message);
-        socket.broadcast.emit('meta', message);
+        socket.get('nickname', function(err, name) {
+            var message = { message:name + ' disconnected', time:new Date() };
+            socket.emit('meta', message);
+            socket.broadcast.emit('meta', message);
+        });
     });
 
 });
