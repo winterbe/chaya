@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 14px;
     color: black;
 }
@@ -21,6 +21,7 @@ body {
 
 #content {
     margin: 10px;
+    font-size: 20px;
 }
 
 #content .entry {
@@ -28,13 +29,12 @@ body {
 }
 
 #content .meta {
-    color: #a9a9a9;
-    font-size: 12px;
-    font-style: italic;
+    color: #999;
+    font-size: 14px;
 }
 
 #content .message {
-    color: black;
+    color: #222;
 }
 
 #south {
