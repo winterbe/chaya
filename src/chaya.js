@@ -1,6 +1,10 @@
 $(function () {
     "use strict";
 
+    // for testing only
+    connect('test');
+
+
     $('#nickname input')
         .focus()
         .on('keyup', function (ev) {
@@ -11,8 +15,6 @@ $(function () {
                 }
             }
         });
-
-//    connect('test');
 
     function connect(nickname) {
         var socket = io.connect('/');

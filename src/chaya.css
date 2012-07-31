@@ -27,7 +27,7 @@ input {
 }
 
 #content {
-    margin: 10px 10px 70px 10px;
+    margin: 45px 10px 70px 10px;
     font-size: 20px;
 }
 
@@ -44,20 +44,59 @@ input {
     color: #222;
 }
 
+#north {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+
+    border-bottom: 1px solid #888888;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#fcfcfc), to(#bfbfbf), color-stop(3%, #f7f7f7), color-stop(20%, #f2f2f2), color-stop(60%, #d9d9d9));
+    background-image: -webkit-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
+    background-image: -moz-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
+    background-image: -o-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
+    background-image: -ms-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
+    background-image: linear-gradient(top bottom, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 white;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 white;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 white;
+}
+
+#north .brand {
+    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    text-shadow: rgba(255, 255, 255, 0.75) 0 1px 0;
+    color: #666;
+    width: 100px;
+    margin: 0 auto;
+    cursor: default;
+}
+
 #south {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 60px;
-    line-height: 60px;
+    height: 40px;
+    line-height: 40px;
     width: 100%;
-    background: #708090;
+
+    border-top: 1px solid #aaa;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#fcfcfc), to(#bfbfbf), color-stop(30%, #f2f2f2), color-stop(70%, #d9d9d9));
+    background-image: -webkit-linear-gradient(top, #fcfcfc, #f2f2f2 30%, #d9d9d9 70%, #bfbfbf);
+    background-image: -moz-linear-gradient(top, #fcfcfc, #f2f2f2 30%, #d9d9d9 70%, #bfbfbf);
+    background-image: -o-linear-gradient(top, #fcfcfc, #f2f2f2 30%, #d9d9d9 70%, #bfbfbf);
+    background-image: -ms-linear-gradient(top, #fcfcfc, #f2f2f2 30%, #d9d9d9 70%, #bfbfbf);
+    background-image: linear-gradient(top bottom, #fcfcfc, #f2f2f2 30%, #d9d9d9 70%, #bfbfbf);
 }
 
 #south input {
-    width: 600px;
-    border: 1px solid gray;
-    padding: 8px;
-    border-radius: 20px;
+    width: 100%;
     margin: 0 20px;
+    border: 1px solid #aaa;
+    padding: 5px 5px 5px 8px;
+    border-radius: 20px;
+    font-size: 12px;
 }
