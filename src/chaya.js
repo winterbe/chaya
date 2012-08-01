@@ -2,7 +2,7 @@ $(function () {
     "use strict";
 
     // for testing only
-    connect('test');
+//    connect('test');
 
 
     $('#nickname input')
