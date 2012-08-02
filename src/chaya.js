@@ -2,8 +2,24 @@ $(function () {
     "use strict";
 
     // for testing only
-//    connect('test');
+    connect('Peter Parker');
 
+
+    var messageTemplate = _.template(
+        '<div class="entry"><div class="from">{{nickname}}</div><div class="msg">{{message}}</div></div>'
+    );
+
+
+    function appendMessage(data) {
+        $('#content')
+            .append($(messageTemplate(data)));
+        scrollDown();
+    }
+
+
+    function scrollDown() {
+        $('html, body').prop('scrollTop', $(document).height());
+    }
 
     $('#nickname input')
         .focus()
@@ -21,15 +37,11 @@ $(function () {
 
         socket.emit('whoami', nickname);
 
-        socket.on('poke', function (data) {
-            var msg = data.nickname + ': ' + data.message;
-            $('#content').append($('<div class="entry message">' + msg + '</div>'));
-            $('html, body').prop('scrollTop', $(document).height());
-        });
+        socket.on('poke', appendMessage);
 
-        socket.on('meta', function (data) {
-            $('#content').append($('<div class="entry meta">' + data.message + '</div>'));
-        });
+//        socket.on('meta', function (data) {
+//            $('#content').append($('<div class="entry meta">' + data.message + '</div>'));
+//        });
 
         $('#nickname').hide();
         $('#chat').show();
@@ -45,5 +57,11 @@ $(function () {
                     }
                 }
             });
+
+
+        // use mustache style templates
+        _.templateSettings = {
+            interpolate:/\{\{(.+?)\}\}/g
+        };
     }
 });

@@ -28,6 +28,11 @@ app.get('/chaya.js', function (req, res) {
     res.sendfile(__dirname + '/chaya.js');
 });
 
+app.get('/underscore-min.js', function (req, res) {
+    "use strict";
+    res.sendfile(__dirname + '/underscore-min.js');
+});
+
 io.sockets.on('connection', function (socket) {
     "use strict";
 
@@ -41,7 +46,12 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('peek', function (data) {
         socket.get('nickname', function(err, name) {
-            var message = { message:data, nickname:name, time:new Date() };
+            var message = {
+                message:data,
+                nickname:name,
+                gravatar:'2374384343',
+                time:new Date()
+            };
             socket.broadcast.emit('poke', message);
             socket.emit('poke', message);
         });

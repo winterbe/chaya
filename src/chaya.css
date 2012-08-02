@@ -27,22 +27,22 @@ input {
 }
 
 #content {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 20px;
     margin: 45px 210px 70px 30px;
 }
 
-#content .entry {
-    margin-bottom: 1px;
+.entry .from {
+    padding-top: 5px;
+    padding-bottom: 3px;
+    color: #434343;
+    font-weight: bold;
+    font-size: 12px;
 }
 
-#content .meta {
-    color: #999;
+.entry .msg {
+    color: #777777;
     font-size: 14px;
-}
-
-#content .message {
-    color: #222;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #F6F6F8;
 }
 
 #north {
