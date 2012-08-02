@@ -30,6 +30,11 @@ input {
     margin: 45px 210px 70px 30px;
 }
 
+.entry {
+    background: url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=36&d=mm&f=d') no-repeat 0 20px;
+    padding-left: 50px;
+}
+
 .entry .from {
     padding-top: 5px;
     padding-bottom: 3px;

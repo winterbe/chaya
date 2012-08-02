@@ -10,14 +10,19 @@ $(function () {
 //    connect('Peter Parker');
 
 
+    var gravatarTemplate = _.template('http://www.gravatar.com/avatar/{{gravatar}}?s=36&d=mm&f=y');
+
     var messageTemplate = _.template(
-        '<div class="entry"><div class="from">{{nickname}}</div><div class="msg">{{message}}</div></div>'
+        '<div class="entry"><img src=""/><div class="from">{{nickname}}</div><div class="msg">{{message}}</div></div>'
     );
 
 
     function appendMessage(data) {
-        $('#content')
-            .append($(messageTemplate(data)));
+//        var gravatarUrl = gravatarTemplate(data);
+        var $entry = $(messageTemplate(data));
+//        $entry.css('background', 'url(' + gravatarUrl + ') no-repeat');
+
+        $('#content').append($entry);
         scrollDown();
     }
 
