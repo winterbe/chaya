@@ -1,6 +1,11 @@
 $(function () {
     "use strict";
 
+    // use mustache style templates
+    _.templateSettings = {
+        interpolate:/\{\{(.+?)\}\}/g
+    };
+
     // for testing only
 //    connect('Peter Parker');
 
@@ -59,9 +64,6 @@ $(function () {
             });
 
 
-        // use mustache style templates
-        _.templateSettings = {
-            interpolate:/\{\{(.+?)\}\}/g
-        };
+
     }
 });
