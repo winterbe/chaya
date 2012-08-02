@@ -2,7 +2,7 @@ $(function () {
     "use strict";
 
     // for testing only
-    connect('Peter Parker');
+//    connect('Peter Parker');
 
 
     var messageTemplate = _.template(
