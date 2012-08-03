@@ -120,10 +120,23 @@ input {
     box-shadow: 0 1px 1px #E3E3E3;
 }
 
+#south .pic {
+    margin: 12px 12px;
+    width: 36px;
+    height: 36px;
+    background: url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=36&d=mm&f=d') no-repeat 0 0;
+
+    border-radius: 4px;
+
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+}
+
 #south input {
     position: fixed;
     bottom: 23px;
-    left: 25px;
+    left: 70px;
     right: 225px;
     border: 1px solid #ccc;
     padding: 8px 8px 8px 12px;
