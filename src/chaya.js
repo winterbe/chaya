@@ -6,7 +6,7 @@ $(function () {
         interpolate:/\{\{(.+?)\}\}/g
     };
 
-    var debug = true;
+    var debug = false;
 
     if (debug) {
         connect('Peter Parker');

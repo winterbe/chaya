@@ -11,15 +11,45 @@ input {
 }
 
 #nickname {
-    width: 150px;
-    margin: 100px auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    background-image: -webkit-linear-gradient(top, #fff, #f0f0f0);
+    background-image: -moz-linear-gradient(top, #fff, #f0f0f0);
+    background-image: -o-linear-gradient(top, #fff, #f0f0f0);
+    background-image: -ms-linear-gradient(top, #fff, #f0f0f0);
+    background-image: linear-gradient(top bottom, #fff, #f0f0f0);
+
+    -webkit-box-shadow: 0 1px 1px #E3E3E3;
+    -moz-box-shadow: 0 1px 1px #E3E3E3;
+    box-shadow: 0 1px 1px #E3E3E3;
+
+    width: 300px;
+    margin: 80px auto;
+}
+
+#nickname h1 {
+    font-size: 22px;
+    color: #333337;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#nickname h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #999990;
+    text-align: center;
+    margin-top: 5px;
 }
 
 #nickname input {
-    width: 150px;
+    margin: 5px 40px 20px;
+    width: 200px;
     border: 1px solid gray;
-    padding: 8px;
+    padding: 8px 8px 8px 12px;
     border-radius: 20px;
+    font-size: 12px;
 }
 
 #chat {
