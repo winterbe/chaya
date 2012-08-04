@@ -6,6 +6,13 @@ body {
     color: black;
 }
 
+.github-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
 input {
     outline: none;
 }
