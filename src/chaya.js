@@ -6,14 +6,16 @@ $(function () {
         interpolate:/\{\{(.+?)\}\}/g
     };
 
-    // for testing only
-//    connect('Peter Parker');
+    var debug = true;
 
+    if (debug) {
+        connect('Peter Parker');
+    }
 
     var gravatarTemplate = _.template('http://www.gravatar.com/avatar/{{gravatar}}?s=36&d=mm&f=y');
 
     var messageTemplate = _.template(
-        '<div class="entry"><img src=""/><div class="from">{{nickname}}</div><div class="msg">{{message}}</div></div>'
+        '<div class="box"><div class="pic"></div><div class="msg"><div class="from">{{nickname}}</div><div class="content">{{message}}</div></div></div>'
     );
 
 
@@ -48,6 +50,10 @@ $(function () {
         socket.emit('whoami', nickname);
 
         socket.on('poke', appendMessage);
+
+        if (debug) {
+            socket.emit('peek', 'Hi there everybody!');
+        }
 
 //        socket.on('meta', function (data) {
 //            $('#content').append($('<div class="entry meta">' + data.message + '</div>'));

@@ -27,15 +27,37 @@ input {
 }
 
 #content {
-    margin: 45px 210px 70px 30px;
+    margin: 45px 220px 80px 23px;
 }
 
-.entry {
-    background: url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=36&d=mm&f=d') no-repeat 0 20px;
-    padding-left: 50px;
+.box {
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    border-bottom: 1px solid #F6F6F8;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
 }
 
-.entry .from {
+.box .pic {
+    margin: 5px;
+    width: 36px;
+    height: 36px;
+    background: url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=36&d=mm&f=d') no-repeat 0 0;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.box .msg {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    margin-left: 10px;
+}
+
+.box .msg .from {
     padding-top: 5px;
     padding-bottom: 3px;
     color: #434343;
@@ -43,11 +65,10 @@ input {
     font-size: 12px;
 }
 
-.entry .msg {
+.box .msg .content {
     color: #777777;
     font-size: 14px;
     padding-bottom: 5px;
-    border-bottom: 1px solid #F6F6F8;
 }
 
 #north {
