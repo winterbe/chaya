@@ -1,7 +1,7 @@
 $(function () {
     "use strict";
 
-    window.setInterval(updateTime, 60000);
+    window.setInterval(updateTimes, 60000);
 
     // use mustache style templates
     _.templateSettings = {
@@ -21,18 +21,22 @@ $(function () {
 
     function appendMessage(data) {
         var $entry = $(messageTemplate(data));
+        var $time = $entry.find('.time');
+        updateTime($time);
         $('#content').append($entry);
         scrollDown();
-        updateTime();
     }
 
-    function updateTime() {
+    function updateTimes() {
         $('.time').each(function() {
-            var $this = $(this);
-            var timestamp = $this.data('timestamp');
-            var fromNow = moment(timestamp).fromNow();
-            $this.text(fromNow);
+            updateTime($(this));
         });
+    }
+
+    function updateTime($time) {
+        var timestamp = $time.data('timestamp');
+        var fromNow = moment(timestamp).fromNow();
+        $time.text(fromNow);
     }
 
     function scrollDown() {

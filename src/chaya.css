@@ -113,8 +113,8 @@ div.fancy {
 
     padding-top: 5px;
     padding-bottom: 1px;
-    color: #999;
-    font-weight: 200;
+    color: #99999B;
+    font-weight: 300;
     font-size: 14px;
 }
 
@@ -125,8 +125,9 @@ div.fancy {
 }
 
 .box .msg .meta .time {
-    color: #ddd;
-    font-size: 13px;
+    color: #AAAAAC;
+    font-size: 12px;
+    font-weight: 200;
 }
 
 .box .msg .content {
