@@ -106,12 +106,27 @@ div.fancy {
     margin-left: 10px;
 }
 
-.box .msg .from {
+.box .msg .meta {
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+
     padding-top: 5px;
     padding-bottom: 1px;
     color: #999;
     font-weight: 200;
     font-size: 14px;
+}
+
+.box .msg .meta .from {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+
+.box .msg .meta .time {
+    color: #ddd;
+    font-size: 13px;
 }
 
 .box .msg .content {

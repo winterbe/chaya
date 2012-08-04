@@ -33,12 +33,17 @@ app.get('/underscore-min.js', function (req, res) {
     res.sendfile(__dirname + '/underscore-min.js');
 });
 
+app.get('/moment.min.js', function (req, res) {
+    "use strict";
+    res.sendfile(__dirname + '/moment.min.js');
+});
+
 io.sockets.on('connection', function (socket) {
     "use strict";
 
     socket.on('whoami', function(nickname) {
         socket.set('nickname', nickname, function() {
-            var message = { message:nickname + ' connected', time:new Date() };
+            var message = { message:nickname + ' connected', timestamp:now() };
             socket.emit('meta', message);
             socket.broadcast.emit('meta', message);
         });
@@ -50,7 +55,7 @@ io.sockets.on('connection', function (socket) {
                 message:data,
                 nickname:name,
                 gravatar:'2374384343',
-                time:new Date()
+                timestamp:now()
             };
             socket.broadcast.emit('poke', message);
             socket.emit('poke', message);
@@ -59,10 +64,15 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function() {
         socket.get('nickname', function(err, name) {
-            var message = { message:name + ' disconnected', time:new Date() };
+            var message = { message:name + ' disconnected', timestamp:now() };
             socket.emit('meta', message);
             socket.broadcast.emit('meta', message);
         });
     });
 
 });
+
+function now() {
+    "use strict";
+    return new Date().getTime();
+}

@@ -1,6 +1,8 @@
 $(function () {
     "use strict";
 
+    window.setInterval(updateTime, 60000);
+
     // use mustache style templates
     _.templateSettings = {
         interpolate:/\{\{(.+?)\}\}/g
@@ -9,25 +11,29 @@ $(function () {
     var debug = false;
 
     if (debug) {
-        connect('Peter Parker');
+        connect('benjamin');
     }
 
-    var gravatarTemplate = _.template('http://www.gravatar.com/avatar/{{gravatar}}?s=36&d=mm&f=y');
-
     var messageTemplate = _.template(
-        '<div class="box"><div class="pic"></div><div class="msg"><div class="from">{{nickname}}</div><div class="content">{{message}}</div></div></div>'
+        '<div class="box">\n    <div class="pic"></div>\n    <div class="msg">\n        <div class="meta">\n            <div class="from">{{nickname}}</div>\n            <div class="time" data-timestamp="{{timestamp}}"></div>\n        </div>\n        <div class="content">{{message}}</div>\n    </div>\n</div>'
     );
 
 
     function appendMessage(data) {
-//        var gravatarUrl = gravatarTemplate(data);
         var $entry = $(messageTemplate(data));
-//        $entry.css('background', 'url(' + gravatarUrl + ') no-repeat');
-
         $('#content').append($entry);
         scrollDown();
+        updateTime();
     }
 
+    function updateTime() {
+        $('.time').each(function() {
+            var $this = $(this);
+            var timestamp = $this.data('timestamp');
+            var fromNow = moment(timestamp).fromNow();
+            $this.text(fromNow);
+        });
+    }
 
     function scrollDown() {
         $('html, body').prop('scrollTop', $(document).height());
@@ -52,7 +58,7 @@ $(function () {
         socket.on('poke', appendMessage);
 
         if (debug) {
-            socket.emit('peek', 'Hi there everybody!');
+            socket.emit('peek', 'was geht ab?');
         }
 
 //        socket.on('meta', function (data) {
