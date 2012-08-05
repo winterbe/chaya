@@ -32,23 +32,23 @@ input.fancy:focus {
     border: 1px solid #bbb;
 }
 
-div.fancy {
+#nickname {
+    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+    width: 300px;
+    margin: 80px auto;
+
     border: 1px solid #ccc;
     border-radius: 4px;
+
     background-image: -webkit-linear-gradient(top, #fff, #f0f0f0);
     background-image: -moz-linear-gradient(top, #fff, #f0f0f0);
     background-image: -o-linear-gradient(top, #fff, #f0f0f0);
     background-image: -ms-linear-gradient(top, #fff, #f0f0f0);
     background-image: linear-gradient(top bottom, #fff, #f0f0f0);
+
     -webkit-box-shadow: 0 1px 1px #E3E3E3;
     -moz-box-shadow: 0 1px 1px #E3E3E3;
     box-shadow: 0 1px 1px #E3E3E3;
-}
-
-#nickname {
-    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
-    width: 300px;
-    margin: 80px auto;
 }
 
 #nickname h1 {
@@ -151,49 +151,28 @@ div.fancy {
     -o-user-select: none;
     -k-user-select: none;
     user-select: none;
-}
 
-#north.gray1 {
-    border-bottom: 1px solid #888888;
+    border-bottom: 1px solid #777;
+
+    -webkit-box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.25), 0px 1px 7px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.25), 0px 1px 7px rgba(0, 0, 0, 0.45);
+    -o-box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.25), 0px 1px 7px rgba(0, 0, 0, 0.45);
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.25), 0px 1px 7px rgba(0, 0, 0, 0.45);
+
     background-image: -webkit-gradient(linear, center top, center bottom, from(#fcfcfc), to(#bfbfbf), color-stop(3%, #f7f7f7), color-stop(20%, #f2f2f2), color-stop(60%, #d9d9d9));
     background-image: -webkit-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
     background-image: -moz-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
     background-image: -o-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
     background-image: -ms-linear-gradient(top, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
     background-image: linear-gradient(top bottom, #fcfcfc, #f7f7f7 3%, #f2f2f2 20%, #d9d9d9 60%, #bfbfbf);
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 white;
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 white;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 white;
-}
-
-#north.blue1 {
-    /*background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, var(gradientTop)), color-stop(80%, var(gradient80)), color-stop(100%, var(gradientBottom)));*/
-    background-image: -webkit-linear-gradient(top, rgba(95, 129, 184, 0.9), rgba(37, 64, 116, 0.9) 80%, rgba(42, 72, 132, 0.9));
-    /*background-image: -moz-linear-gradient(top, var(gradientTop), var(gradient80) 80%, var(gradientBottom));*/
-    /*background-image: -o-linear-gradient(top, var(gradientTop), var(gradient80) 80%, var(gradientBottom));*/
-    /*background-image: -ms-linear-gradient(top, var(gradientTop), var(gradient80) 80%, var(gradientBottom));*/
-    /*background-image: linear-gradient(top, var(gradientTop), var(gradient80) 80%, var(gradientBottom));*/
-
-    border: 1px solid #05173A;
-    border-left: 0;
-    border-right: 0;
-
-    -moz-box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.45);
-    -webkit-box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.45);
-    -o-box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.45);
-    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.45);
-    -moz-box-shadow: inset 0px -1px 0px rgba(83, 141, 255, 0.35), inset 0px 1px 0px rgba(168, 197, 255, 0.65), 0px 1px 7px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: inset 0px -1px 0px rgba(83, 141, 255, 0.35), inset 0px 1px 0px rgba(168, 197, 255, 0.65), 0px 1px 7px rgba(0, 0, 0, 0.75);
-    -o-box-shadow: inset 0px -1px 0px rgba(83, 141, 255, 0.35), inset 0px 1px 0px rgba(168, 197, 255, 0.65), 0px 1px 7px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px -1px 0px rgba(83, 141, 255, 0.35), inset 0px 1px 0px rgba(168, 197, 255, 0.65), 0px 1px 7px rgba(0, 0, 0, 0.75);
 }
 
 #north .brand {
     font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
     font-weight: 700;
-    font-size: 22px;
-    text-shadow: black 0 1px 0;
-    color: #F4F4F8;
+    font-size: 20px;
+    text-shadow: 0 1px 1px white;
+    color: #666;
     width: 100px;
     margin: 0 auto;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -221,6 +200,23 @@ div.fancy {
     right: 215px;
     height: 60px;
     z-index: 100;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    background: rgb(255, 255, 255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(241, 241, 241, 1)), color-stop(51%, rgba(225, 225, 225, 1)), color-stop(100%, rgba(246, 246, 246, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#f6f6f6', GradientType = 0); /* IE6-9 */
+
+    -webkit-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
 }
 
 #south .pic {
@@ -230,8 +226,10 @@ div.fancy {
     background: url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=36&d=mm&f=d') no-repeat 0 0;
 
     border-radius: 4px;
+
     -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
 }
 
