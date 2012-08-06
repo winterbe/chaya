@@ -1,4 +1,5 @@
-var app = require('express').createServer();
+var express = require("express");
+var app = express.createServer();
 var io = require('socket.io').listen(app);
 
 if (process.env.PORT) {
@@ -15,27 +16,21 @@ app.listen(port);
 
 app.get('/', function (req, res) {
     "use strict";
-    res.sendfile(__dirname + '/index.html');
+    res.sendfile(__dirname + '/public/index.html');
 });
 
-app.get('/chaya.css', function (req, res) {
+app.configure(function () {
     "use strict";
-    res.sendfile(__dirname + '/chaya.css');
-});
-
-app.get('/chaya.js', function (req, res) {
-    "use strict";
-    res.sendfile(__dirname + '/chaya.js');
-});
-
-app.get('/underscore-min.js', function (req, res) {
-    "use strict";
-    res.sendfile(__dirname + '/underscore-min.js');
-});
-
-app.get('/moment.min.js', function (req, res) {
-    "use strict";
-    res.sendfile(__dirname + '/moment.min.js');
+    app.use(express.favicon());
+    app.use(express.logger());
+    app.use(express.methodOverride());
+    app.use(express.bodyParser());
+    app.use(express.static(__dirname + '/public'));
+    app.use(express.errorHandler({
+        dumpExceptions:true,
+        showStack:true
+    }));
+    app.use(app.router);
 });
 
 io.sockets.on('connection', function (socket) {
@@ -43,7 +38,11 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('whoami', function(nickname) {
         socket.set('nickname', nickname, function() {
-            var message = { message:nickname + ' connected', timestamp:now() };
+            var message = {
+                type:'connected',
+                nickname:nickname,
+                timestamp:now()
+            };
             socket.emit('meta', message);
             socket.broadcast.emit('meta', message);
         });
@@ -63,8 +62,12 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('disconnect', function() {
-        socket.get('nickname', function(err, name) {
-            var message = { message:name + ' disconnected', timestamp:now() };
+        socket.get('nickname', function(err, nickname) {
+            var message = {
+                type: 'disconnected',
+                nickname:nickname,
+                timestamp:now()
+            };
             socket.emit('meta', message);
             socket.broadcast.emit('meta', message);
         });

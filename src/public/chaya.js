@@ -14,13 +14,20 @@ $(function () {
         connect('benjamin');
     }
 
-    var messageTemplate = _.template(
-        '<div class="box">\n    <div class="pic"></div>\n    <div class="msg">\n        <div class="meta">\n            <div class="from">{{nickname}}</div>\n            <div class="time" data-timestamp="{{timestamp}}"></div>\n        </div>\n        <div class="content">{{message}}</div>\n    </div>\n</div>'
-    );
+    var messageTemplate = _.template('<div class="box">\n    <div class="pic"></div>\n    <div class="msg">\n        <div class="meta">\n            <div class="from">{{nickname}}</div>\n            <div class="time" data-timestamp="{{timestamp}}"></div>\n        </div>\n        <div class="content">{{message}}</div>\n    </div>\n</div>');
+    var metaTemplate = _.template('<div class="info"><i class="icon-user"></i> {{nickname}} {{type}}</div>');
 
 
     function appendMessage(data) {
         var $entry = $(messageTemplate(data));
+        var $time = $entry.find('.time');
+        updateTime($time);
+        $('#content').append($entry);
+        scrollDown();
+    }
+
+    function appendMeta(data) {
+        var $entry = $(metaTemplate(data));
         var $time = $entry.find('.time');
         updateTime($time);
         $('#content').append($entry);
@@ -61,13 +68,12 @@ $(function () {
 
         socket.on('poke', appendMessage);
 
+        socket.on('meta', appendMeta);
+
         if (debug) {
             socket.emit('peek', 'was geht ab?');
         }
 
-//        socket.on('meta', function (data) {
-//            $('#content').append($('<div class="entry meta">' + data.message + '</div>'));
-//        });
 
         $('#nickname').hide();
         $('#chat').show();

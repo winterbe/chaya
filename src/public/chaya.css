@@ -79,6 +79,13 @@ input.fancy:focus {
     margin: 45px 220px 80px 23px;
 }
 
+.info {
+    color: #D4D4D4;
+    font-weight: 200;
+    font-size: 14px;
+    margin-left: 55px;
+}
+
 .box {
     display: box;
     display: -webkit-box;
