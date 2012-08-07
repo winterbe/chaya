@@ -36,7 +36,27 @@ app.configure(function () {
 io.sockets.on('connection', function (socket) {
     "use strict";
 
+    // send all users to new user
+    io.sockets.clients().forEach(function(otherSocket) {
+        otherSocket.get('nickname', function(err, nickname) {
+            if (nickname) {
+                var data = {
+                    nickname:nickname,
+                    timestamp:now()
+                };
+                socket.emit('user-connected', data);
+            }
+        });
+    });
+
     socket.on('whoami', function(nickname) {
+        var data = {
+            nickname:nickname,
+            timestamp:now()
+        };
+        socket.broadcast.emit('user-connected', data);
+        socket.emit('user-connected', data);
+
         socket.set('nickname', nickname, function() {
             var message = {
                 type:'connected',
@@ -63,6 +83,8 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function() {
         socket.get('nickname', function(err, nickname) {
+            socket.broadcast.emit('user-disonnected', nickname);
+
             var message = {
                 type: 'disconnected',
                 nickname:nickname,

@@ -77,10 +77,13 @@ input {
 }
 
 .info {
-    color: #D4D4D4;
+    color: #AAAAAC;
+    font-size: 12px;
     font-weight: 200;
-    font-size: 14px;
-    margin-left: 55px;
+    border-bottom: 1px solid #F6F6F8;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+    padding-left: 55px;
 }
 
 .box {
@@ -183,6 +186,11 @@ input {
 }
 
 #east {
+    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+    color: #868B91;
+    text-shadow: 0 1px 0 white;
+    padding-left: 10px;
+
     position: fixed;
     top: 35px;
     bottom: 0;
@@ -195,6 +203,22 @@ input {
     -webkit-box-shadow: inset 0 1px 0 white;
     -moz-box-shadow: inset 0 1px 0 white;
     box-shadow: inset 0 1px 0 white;
+}
+
+#east h3 {
+    margin: 20px 10px 5px 10px;
+    font-size: 13px;
+}
+
+#east ul {
+    margin: 5px 10px 10px 0;
+    padding-left: 10px;
+}
+
+#east li {
+    list-style-type: none;
+    line-height: 22px;
+    color:#666;
 }
 
 #south {

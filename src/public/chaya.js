@@ -15,8 +15,8 @@ $(function () {
     }
 
     var messageTemplate = _.template('<div class="box">\n    <div class="pic"></div>\n    <div class="msg">\n        <div class="meta">\n            <div class="from">{{nickname}}</div>\n            <div class="time" data-timestamp="{{timestamp}}"></div>\n        </div>\n        <div class="content">{{message}}</div>\n    </div>\n</div>');
-    var metaTemplate = _.template('<div class="info"><i class="icon-user"></i> {{nickname}} {{type}}</div>');
-
+    var metaTemplate = _.template('<div class="info"><i class="icon-bell"></i>&nbsp;&nbsp;{{nickname}} {{type}}</div>');
+    var userTemplate = _.template('<li><i class="icon-user"></i> {{nickname}}</li>');
 
     function appendMessage(data) {
         var $entry = $(messageTemplate(data));
@@ -32,6 +32,16 @@ $(function () {
         updateTime($time);
         $('#content').append($entry);
         scrollDown();
+    }
+
+    function addUserToSidebar(data) {
+        var $li = $(userTemplate(data));
+        $('#east ul').append($li);
+    }
+
+    function removeUserFromSidebar(nickname) {
+        console.log(nickname + ' disconnected');
+        // TODO
     }
 
     function updateTimes() {
@@ -64,11 +74,13 @@ $(function () {
     function connect(nickname) {
         var socket = io.connect('/');
 
+        socket.on('poke', appendMessage);
+        socket.on('meta', appendMeta);
+        socket.on('user-connected', addUserToSidebar);
+        socket.on('user-disconnected', removeUserFromSidebar);
+
         socket.emit('whoami', nickname);
 
-        socket.on('poke', appendMessage);
-
-        socket.on('meta', appendMeta);
 
         if (debug) {
             socket.emit('peek', 'was geht ab?');
@@ -89,8 +101,6 @@ $(function () {
                     }
                 }
             });
-
-
 
     }
 });
