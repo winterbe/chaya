@@ -15,8 +15,8 @@ $(function () {
     }
 
     var messageTemplate = _.template('<div class="box">\n    <div class="pic"></div>\n    <div class="msg">\n        <div class="meta">\n            <div class="from">{{nickname}}</div>\n            <div class="time" data-timestamp="{{timestamp}}"></div>\n        </div>\n        <div class="content">{{message}}</div>\n    </div>\n</div>');
-    var metaTemplate = _.template('<div class="info"><i class="icon-bell"></i>&nbsp;&nbsp;{{nickname}} {{type}}</div>');
-    var userTemplate = _.template('<li><i class="icon-user"></i> {{nickname}}</li>');
+    var metaTemplate = _.template('<div class="info"><i class="icon-bell"></i>&nbsp;&nbsp;{{message}}</div>');
+    var userTemplate = _.template('<li data-nickname="{{nickname}}"><i class="icon-user"></i> {{nickname}}</li>');
 
     function appendMessage(data) {
         var $entry = $(messageTemplate(data));
@@ -40,8 +40,7 @@ $(function () {
     }
 
     function removeUserFromSidebar(nickname) {
-        console.log(nickname + ' disconnected');
-        // TODO
+        $('#east li[data-nickname='+nickname+']').remove();
     }
 
     function updateTimes() {

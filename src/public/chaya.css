@@ -225,7 +225,7 @@ input {
     position: fixed;
     bottom: 10px;
     left: 15px;
-    right: 215px;
+    right: 225px;
     height: 60px;
     z-index: 100;
 
@@ -265,7 +265,7 @@ input {
     position: fixed;
     bottom: 23px;
     left: 70px;
-    right: 225px;
+    right: 235px;
 
     border: 1px solid #AAAAAC;
     padding: 8px 8px 8px 12px;

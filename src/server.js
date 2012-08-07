@@ -59,8 +59,7 @@ io.sockets.on('connection', function (socket) {
 
         socket.set('nickname', nickname, function() {
             var message = {
-                type:'connected',
-                nickname:nickname,
+                message: nickname + ' joined',
                 timestamp:now()
             };
             socket.emit('meta', message);
@@ -83,11 +82,10 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function() {
         socket.get('nickname', function(err, nickname) {
-            socket.broadcast.emit('user-disonnected', nickname);
+            socket.broadcast.emit('user-disconnected', nickname);
 
             var message = {
-                type: 'disconnected',
-                nickname:nickname,
+                message:nickname + ' left',
                 timestamp:now()
             };
             socket.emit('meta', message);
