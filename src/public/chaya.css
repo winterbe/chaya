@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    /*font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;*/
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 14px;
     color: black;
@@ -16,20 +15,6 @@ body {
 
 input {
     outline: none;
-}
-
-input.fancy {
-    border: 1px solid #ccc;
-    padding: 8px 8px 8px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    -webkit-box-shadow: 0 1px 1px white, inset 0 1px 5px #E7E7E7;
-    -moz-box-shadow: 0 1px 1px white, inset 0 1px 5px #E7E7E7;
-    box-shadow: 0 1px 1px white, inset 0 1px 5px #E7E7E7;
-}
-
-input.fancy:focus {
-    border: 1px solid #bbb;
 }
 
 #nickname {
@@ -69,6 +54,18 @@ input.fancy:focus {
 #nickname input {
     margin: 5px 40px 20px;
     width: 200px;
+
+    border: 1px solid #AAAAAC;
+    padding: 8px 8px 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    -webkit-box-shadow: 0 1px 1px white, inset 0 1px 5px #E7E7E7;
+    -moz-box-shadow: 0 1px 1px white, inset 0 1px 5px #E7E7E7;
+    box-shadow: 0 1px 1px white, inset 0 1px 5px #E7E7E7;
+}
+
+#nickname input:focus {
+    border: 1px solid #bbb;
 }
 
 #chat {
@@ -208,7 +205,7 @@ input.fancy:focus {
     height: 60px;
     z-index: 100;
 
-    border: 1px solid #ccc;
+    border: 1px solid #AAAAAC;
     border-radius: 4px;
 
     background: rgb(255, 255, 255); /* Old browsers */
@@ -220,10 +217,10 @@ input.fancy:focus {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#f6f6f6', GradientType = 0); /* IE6-9 */
 
-    -webkit-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
-    -o-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
-    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 6px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 6px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 6px rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.9), 0px 0px 6px rgba(0, 0, 0, 0.25);
 }
 
 #south .pic {
@@ -245,4 +242,12 @@ input.fancy:focus {
     bottom: 23px;
     left: 70px;
     right: 225px;
+
+    border: 1px solid #AAAAAC;
+    padding: 8px 8px 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    -webkit-box-shadow: 0 1px 1px white, inset 0 2px 5px #E7E7E7;
+    -moz-box-shadow: 0 1px 1px white, inset 0 2px 5px #E7E7E7;
+    box-shadow: 0 1px 1px white, inset 0 2px 5px #E7E7E7;
 }
