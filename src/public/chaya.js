@@ -86,7 +86,7 @@ $(function () {
         socket.emit('whoami', nickname);
 
         $('#connect').hide();
-        $('#chaya').show();
+        $('#chaya').show(1000);
 
         $('#chaya .actionbar input')
             .focus()
