@@ -20,10 +20,10 @@ input {
 #connect {
     font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
     width: 300px;
-    margin: 80px auto;
+    margin: -200px auto;
 
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 3px;
 
     background-image: -webkit-linear-gradient(top, #fff, #f0f0f0);
     background-image: -moz-linear-gradient(top, #fff, #f0f0f0);
@@ -31,9 +31,33 @@ input {
     background-image: -ms-linear-gradient(top, #fff, #f0f0f0);
     background-image: linear-gradient(top bottom, #fff, #f0f0f0);
 
-    -webkit-box-shadow: 0 1px 1px #E3E3E3;
-    -moz-box-shadow: 0 1px 1px #E3E3E3;
-    box-shadow: 0 1px 1px #E3E3E3;
+    -webkit-box-shadow: 0 0 18px rgba(0,0,0,0.18);
+    -moz-box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.18);
+
+    -webkit-transition: margin-top 0.5s ease;
+    -moz-transition: margin-top 0.5s ease;
+    -o-transition: margin-top 0.5s ease;
+    -ms-transition: margin-top 0.5s ease;
+    transition: margin-top 0.5s ease;
+}
+
+#connect.shown {
+    margin-top: 120px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+#connect.hidden {
+    opacity: 0;
+    -webkit-transform: scale(4);
+    -moz-transform: scale(4);
+    -o-transform: scale(4);
+    -ms-transform: scale(4);
+    transform: scale(4);
 }
 
 #connect h1 {
