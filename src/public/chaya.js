@@ -96,7 +96,7 @@ $(function () {
         window.setTimeout(function () {
             $('#ribbon').hide();
             $('#connect').hide();
-            $('#chaya').show();
+            $('#chaya').show().find('input').focus();
         }, 800);
 
 
