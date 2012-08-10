@@ -112,7 +112,7 @@ $(function () {
 
 
     var connectTemplate = _.template('<div id="connect">\n    <h1>CHAYA</h1>\n\n    <h3>An HTML5 Web Chat</h3>\n    <input type="text" placeholder="Choose your nickname">\n</div>\n\n<a id="ribbon" href="https://github.com/winterbe/chaya">\n    <img class="github-ribbon"\n         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">\n</a>');
-    var mainTemplate = _.template('<div id="chaya">\n    <div class="titlebar">\n        <div class="brand">CHAYA</div>\n    </div>\n\n    <div class="sidebar">\n        <h3>CONNECTED USERS</h3>\n        <ul></ul>\n    </div>\n\n    <div class="content"></div>\n\n    <div class="actionbar">\n        <div class="pic"></div>\n        <input type="text" placeholder="Leave a message...">\n    </div>\n</div>');
+    var mainTemplate = _.template('<div id="chaya">\n    <div class="titlebar">\n        <div class="brand">CHAYA</div>\n    </div>\n\n    <div class="sidebar">\n        <h3>CONNECTED USERS</h3>\n        <ul></ul>\n    </div>\n\n    <div class="content"></div>\n\n    <div class="actionbar">\n        <div class="pic"></div>\n        <div class="wrapper">\n            <input type="text" placeholder="Leave a message...">\n        </div>\n    </div>\n</div>');
 
     $('body').append($(connectTemplate()));
     $('body').append($(mainTemplate()));
