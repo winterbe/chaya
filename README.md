@@ -15,12 +15,12 @@ Feel free to join, you're welcome! :)
 
 ## Host your own chat
 
-This is quite simple:
-1. Fork Chaya
-2. Install Node.js and NPM
-3. Install Heroku Toolbelt
-4. Push your chaya fork to another heroku project
-5. Have a blast!
+It's quite simple and totally free:
+- Fork Chaya
+- Install Node.js and NPM
+- Install Heroku Toolbelt
+- Push your chaya fork to another heroku project
+- Have a blast!
 
 ## Roadmap
 
