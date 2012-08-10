@@ -111,18 +111,25 @@ input {
 }
 
 #chaya .box {
-    display: box;
     display: -webkit-box;
+    -webkit-box-orient: horizontal;
     display: -moz-box;
+    -moz-box-orient: horizontal;
+    display: box;
+    box-orient: horizontal;
+
     border-bottom: 1px solid #F6F6F8;
     padding-bottom: 3px;
     margin-bottom: 4px;
+    width: 100%;
 }
 
 #chaya .box .pic {
     margin: 7px 5px 5px 5px;
     width: 36px;
     height: 36px;
+    max-height: 36px;
+    max-width: 36px;
     background: url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=36&d=mm&f=d') no-repeat 0 0;
     border-radius: 4px;
     -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.15);
@@ -138,15 +145,19 @@ input {
 }
 
 #chaya .box .msg .meta {
-    display: box;
     display: -webkit-box;
+    -webkit-box-orient: horizontal;
     display: -moz-box;
+    -moz-box-orient: horizontal;
+    display: box;
+    box-orient: horizontal;
 
     padding-top: 5px;
     padding-bottom: 1px;
     color: #99999B;
     font-weight: 300;
     font-size: 14px;
+    width:100%;
 }
 
 #chaya .box .msg .meta .from {
@@ -246,6 +257,13 @@ input {
 }
 
 #chaya .actionbar {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    display: box;
+    box-orient: horizontal;
+
     position: fixed;
     bottom: 10px;
     left: 15px;
@@ -295,6 +313,7 @@ input {
     padding: 8px 8px 8px 12px;
     border-radius: 20px;
     font-size: 12px;
+
     -webkit-box-shadow: 0 1px 1px white, inset 0 2px 5px #E7E7E7;
     -moz-box-shadow: 0 1px 1px white, inset 0 2px 5px #E7E7E7;
     box-shadow: 0 1px 1px white, inset 0 2px 5px #E7E7E7;
