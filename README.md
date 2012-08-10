@@ -32,3 +32,7 @@ It's quite simple and totally free:
 ## License
 
 Chaya is published under MIT license. Feel free to fork and modify by your needs.
+
+## Contact
+
+https://twitter.com/benontherun
