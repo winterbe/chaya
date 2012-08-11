@@ -13,7 +13,7 @@ body {
     border: 0;
 }
 
-.footer {
+#footer {
     position: fixed;
     left: 0;
     bottom:0;
@@ -22,7 +22,7 @@ body {
     text-align: center;
 }
 
-.footer .copyright, .footer .copyright a {
+#footer .copyright, #footer .copyright a {
     font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
     font-size: 10px;
     color:#999;
